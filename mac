@@ -94,6 +94,13 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 
+if ! command -v xcode-select >/dev/null; then
+  fancy_echo "Installing xcode-select ..."
+  xcode-select --install
+else
+  fancy_echo "xcode-select already installed. Skipping ..."
+fi
+
 brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'postgis'
 brew_launchctl_restart 'postgresql'
@@ -128,6 +135,8 @@ rbenv global "$ruby_version"
 gem update --system
 
 gem_install_or_update 'bundler'
+
+gem install bundle
 
 fancy_echo "Configuring Bundler ..."
   number_of_cores=$(sysctl -n hw.ncpu)
