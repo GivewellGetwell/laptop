@@ -21,7 +21,7 @@ versions are welcome.
 Install
 -------
 
-Download, review, then execute the script:
+You don't have to clone this repo, just download, review, then execute the script:
 
 ```sh
 curl --remote-name https://raw.githubusercontent.com/wellist/laptop/master/mac
