@@ -117,8 +117,7 @@ brew_install_or_upgrade 'node'
 brew_install_or_upgrade 'awscli'
 brew_install_or_upgrade 'geckodriver'
 brew cask install chromedriver
-brew_install_or_upgrade 'kops'
-brew_install_or_upgrade 'gettext'
+
 
 brew_install_or_upgrade 'rbenv'
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
@@ -151,6 +150,11 @@ fancy_echo "Configuring Bundler ..."
   bundle config --global jobs $((number_of_cores - 1))
 
 brew_install_or_upgrade 'heroku-toolbelt'
+
+brew_install_or_upgrade 'kops'
+brew_install_or_upgrade 'gettext'
+
+echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.bashrc
 
 if ! command -v rcup >/dev/null; then
   brew_tap 'thoughtbot/formulae'
