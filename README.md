@@ -29,6 +29,8 @@ less mac
 sh mac 2>&1 | tee ~/laptop.log
 ```
 
+This script automatically adds to your .bashrc file. If you don't use .bashrc (e.g. .bash_profile, .zshrc), ensure those additions are copied to where they need to be and refresh your terminal, if need be. 
+
 Debugging
 ---------
 
